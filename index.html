@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gradient Descent Visualizer — 3D</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Gradient Descent Visualizer</h1>
+      <p class="tagline">Watch a ball roll down a 3D loss surface — built from scratch, no ML libraries.</p>
+    </header>
+
+    <aside id="controls">
+      <section>
+        <h2>Surface</h2>
+        <select id="surface-select"></select>
+        <p id="surface-desc" class="hint"></p>
+      </section>
+
+      <section>
+        <h2>Optimizer</h2>
+        <select id="optimizer-select"></select>
+        <label>
+          Learning rate
+          <input type="range" id="lr-slider" min="0.001" max="0.5" step="0.001" value="0.1" />
+          <span id="lr-value">0.10</span>
+        </label>
+      </section>
+
+      <section>
+        <h2>Animation</h2>
+        <div class="btn-row">
+          <button id="btn-play" type="button">▶ Play</button>
+          <button id="btn-reset" type="button">↺ Reset</button>
+        </div>
+        <label>
+          Speed
+          <input type="range" id="speed-slider" min="1" max="20" step="1" value="5" />
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" id="show-trail" checked />
+          Show trail
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" id="show-race" />
+          Optimizer race (4 balls)
+        </label>
+      </section>
+
+      <section id="stats">
+        <h2>Live stats</h2>
+        <div class="stat"><span>Step</span><strong id="stat-step">0</strong></div>
+        <div class="stat"><span>Loss</span><strong id="stat-loss">—</strong></div>
+        <div class="stat"><span>|∇f|</span><strong id="stat-grad">—</strong></div>
+        <div class="stat"><span>Position</span><strong id="stat-pos">—</strong></div>
+      </section>
+
+      <section class="caption" id="caption">
+        <strong>Gradient descent:</strong> the ball moves opposite to the gradient (steepest uphill direction), rolling toward a minimum.
+      </section>
+    </aside>
+
+    <main id="viewport">
+      <canvas id="canvas-3d"></canvas>
+      <div class="overlay-hint">Drag to orbit · Scroll to zoom</div>
+    </main>
+
+    <footer id="loss-panel">
+      <h2>Loss over steps</h2>
+      <canvas id="canvas-loss"></canvas>
+    </footer>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

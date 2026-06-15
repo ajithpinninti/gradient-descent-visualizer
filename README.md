@@ -37,8 +37,8 @@ This repo is built in **small, verified chunks**:
 | Chunk | What | Status |
 |-------|------|--------|
 | 0 | Repo scaffold + test harness | ✅ |
-| 1 | Loss surfaces + analytic gradients (math) | 🔄 |
-| 2 | Optimizers: SGD, Momentum, RMSProp, Adam | ⏳ |
+| 1 | Loss surfaces + analytic gradients (math) | ✅ |
+| 2 | Optimizers: SGD, Momentum, RMSProp, Adam | 🔄 |
 | 3 | Trajectory generator (path downhill) | ⏳ |
 | 4 | Three.js 3D surface + animated marker | ⏳ |
 | 5 | Controls, loss chart, README GIFs | ⏳ |
@@ -71,7 +71,7 @@ It tells you which direction increases `f` fastest. **Gradient descent** updates
 | **Saddle** | `x² − y²` | Gradient is zero but it's not a minimum |
 | **Himmelblau** | `(x²+y−11)² + (x+y²−7)²` | Four equal global minima — start point matters |
 | **Rosenbrock** | `(1−x)² + 100(y−x²)²` | Narrow curved valley — why Momentum/Adam help |
-| **Wavy bowl** | `x² + y² + sin(3x)sin(3y)` | Local minima vs one global minimum |
+| **Wavy bowl** | `x² + y² + 0.15(1−cos2x)(1−cos2y)` | Rippled landscape — global min at origin, hills in between |
 
 ### Optimizers (from scratch)
 

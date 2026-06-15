@@ -1,0 +1,11 @@
+{
+  "name": "gradient-descent-visualizer",
+  "version": "0.1.0",
+  "description": "Interactive 3D gradient descent visualizer — from-scratch math, no ML libraries",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/harness.test.js && node tests/surfaces.test.js && node tests/optimizers.test.js && node tests/descent.test.js"
+  },
+  "license": "MIT",
+  "author": "ajithpinninti"
+}

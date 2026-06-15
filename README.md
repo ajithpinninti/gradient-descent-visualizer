@@ -2,7 +2,7 @@
 
 > **Watch a ball roll down a 3D loss surface and actually understand gradient descent — built from scratch in JavaScript, no ML libraries.**
 
-[![Live Demo](#)](#) · [How it works](#how-it-works) · [The math](#the-math) · [Run locally](#run-locally)
+[![Live Demo](https://ajithpinninti.github.io/gradient-descent-visualizer/)](https://ajithpinninti.github.io/gradient-descent-visualizer/) · [How it works](#how-it-works) · [The math](#the-math) · [Run locally](#run-locally)
 
 📖 **Full write-up:** [`docs/DOCUMENTATION.md`](docs/DOCUMENTATION.md) — the complete, fact-checked explanation of the project, the math, how it was built, and measured observations. 🎬 **Video script:** [`docs/VIDEO_SCRIPT.md`](docs/VIDEO_SCRIPT.md) — scene-by-scene narration ready for DistilBook.
 

@@ -4,6 +4,8 @@
 
 [![Live Demo](#)](#) · [How it works](#how-it-works) · [The math](#the-math) · [Run locally](#run-locally)
 
+📖 **Full write-up:** [`docs/DOCUMENTATION.md`](docs/DOCUMENTATION.md) — the complete, fact-checked explanation of the project, the math, how it was built, and measured observations. 🎬 **Video script:** [`docs/VIDEO_SCRIPT.md`](docs/VIDEO_SCRIPT.md) — scene-by-scene narration ready for DistilBook.
+
 ---
 
 ## What you'll learn in 60 seconds

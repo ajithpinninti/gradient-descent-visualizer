@@ -2,7 +2,11 @@
 
 > **Watch a ball roll down a 3D loss surface and actually understand gradient descent — built from scratch in JavaScript, no ML libraries.**
 
-**[▶ Live Demo](https://ajithpinninti.github.io/gradient-descent-visualizer/)** · [How it works](#how-it-works) · [The math](#the-math) · [Run locally](#run-locally)
+### 🎬 New here? Watch the full video explanation first → **[Complete walkthrough of this project](https://distilbook.com/share/c46a0854)**
+
+> A short narrated video that explains what this project is, the math behind gradient descent, and how everything works — the easiest way to understand it in a few minutes.
+
+**[▶ Live Demo](https://ajithpinninti.github.io/gradient-descent-visualizer/)** · [🎬 Video explanation](https://distilbook.com/share/c46a0854) · [How it works](#how-it-works) · [The math](#the-math) · [Run locally](#run-locally)
 
 📖 **Full write-up:** [`docs/DOCUMENTATION.md`](docs/DOCUMENTATION.md) — the complete, fact-checked explanation of the project, the math, how it was built, and measured observations. 🎬 **Video script:** [`docs/VIDEO_SCRIPT.md`](docs/VIDEO_SCRIPT.md) — scene-by-scene narration ready for DistilBook.
 
@@ -207,7 +211,7 @@ This is why, on Rosenbrock, you'll see **SGD stall in the valley while Momentum 
 
 Machine learning tutorials often show gradient descent as a formula. This project makes it **tangible** — a ball rolling down a surface you can rotate, zoom, and experiment with.
 
-Built while working on **[DistilBook](https://distilbook.com)** — turn any topic into clear whiteboard-style explainers. This README is written so you can paste it into DistilBook to auto-generate a walkthrough video of how gradient descent works.
+Built while working on **[DistilBook](https://distilbook.com)** — turn any topic into clear whiteboard-style explainers. In fact, the **[video explanation of this project](https://distilbook.com/share/c46a0854)** was generated from these very docs with DistilBook — that's exactly what it does: docs in, clear explainer video out.
 
 ---
 

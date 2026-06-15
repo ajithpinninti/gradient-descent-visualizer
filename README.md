@@ -25,9 +25,9 @@ This project lets you **see** all of that in 3D — drag to orbit, scroll to zoo
 
 > **Status:** All math verified ✓ (39 tests) · [Live demo](https://ajithpinninti.github.io/gradient-descent-visualizer/) · [Source](https://github.com/ajithpinninti/gradient-descent-visualizer)
 
-<video src="assets/demo.webm" autoplay loop muted playsinline controls width="100%">
-  <a href="assets/demo.webm">Watch the demo video</a>
-</video>
+[![Gradient descent visualizer demo](assets/demo.gif)](https://ajithpinninti.github.io/gradient-descent-visualizer/)
+
+*▶ Click the GIF (or the link below) to open the live interactive demo. ([higher-quality .webm](assets/demo.webm))*
 
 **Default view:** a ball starts on a smooth bowl and rolls to the bottom using gradient descent. Switch surfaces to see saddles, multiple minima, and narrow valleys.
 

@@ -3,7 +3,7 @@
 > A from-scratch, math-verified 3D visualization of how machine learning models actually learn.
 > Every number and conclusion in this document was measured directly from the code, not estimated.
 
-This document explains **what the project is**, **the mathematics behind it**, **how it was built (step by step)**, **how each part behaves**, and the **observations and conclusions** drawn from running it. It is written to be readable on its own and to be handed to a tool like **DistilBook** to generate an explainer video. A scene-by-scene narration script lives in [`VIDEO_SCRIPT.md`](VIDEO_SCRIPT.md).
+This document explains **what the project is**, **the mathematics behind it**, **how it was built (step by step)**, **how each part behaves**, and the **observations and conclusions** drawn from running it. It is written to be readable on its own and to be handed to a tool like **DistilBook** to generate an explainer video.
 
 ---
 
@@ -392,4 +392,4 @@ This 2D demo is the same loop, shrunk to a surface you can see and rotate. Every
 
 ---
 
-*Built while making **DistilBook** — turn any topic into a clear whiteboard-style explainer. This document is structured so DistilBook can generate a faithful walkthrough video; see [`VIDEO_SCRIPT.md`](VIDEO_SCRIPT.md) for the scene-by-scene narration.*
+*Built while making **DistilBook** — turn any topic into a clear whiteboard-style explainer. This document is structured so DistilBook can generate a faithful walkthrough video directly from it.*

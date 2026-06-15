@@ -8,7 +8,7 @@
 
 **[▶ Live Demo](https://ajithpinninti.github.io/gradient-descent-visualizer/)** · [🎬 Video explanation](https://distilbook.com/share/c46a0854) · [How it works](#how-it-works) · [The math](#the-math) · [Run locally](#run-locally)
 
-📖 **Full write-up:** [`docs/DOCUMENTATION.md`](docs/DOCUMENTATION.md) — the complete, fact-checked explanation of the project, the math, how it was built, and measured observations. 🎬 **Video script:** [`docs/VIDEO_SCRIPT.md`](docs/VIDEO_SCRIPT.md) — scene-by-scene narration ready for DistilBook.
+📖 **Full write-up:** [`docs/DOCUMENTATION.md`](docs/DOCUMENTATION.md) — the complete, fact-checked explanation of the project, the math, how it was built, and measured observations.
 
 ---
 

@@ -39,6 +39,41 @@ header {
   padding: 12px 20px;
   border-bottom: 1px solid var(--border);
   background: var(--panel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+#video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 9px 16px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 0 16px rgba(108, 140, 255, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#video-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 24px rgba(255, 108, 140, 0.55);
+}
+
+#video-link .video-icon {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 560px) {
+  #video-link .video-label {
+    display: none;
+  }
 }
 
 header h1 {

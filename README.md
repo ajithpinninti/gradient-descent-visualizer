@@ -174,15 +174,27 @@ gradient-descent-visualizer/
 ├── src/
 │   ├── surfaces.js      # f(x,y) and ∇f — verified against finite differences
 │   ├── optimizers.js    # SGD, Momentum, RMSProp, Adam
-│   ├── descent.js       # runDescent() → trajectory array
-│   ├── scene3d.js       # Three.js mesh (visual layer)
-│   └── main.js          # UI wiring
+│   ├── descent.js       # runDescent() + gradient clipping + divergence guard
+│   ├── visConfig.js     # tuned per-surface learning rates / clip values
+│   ├── scene3d.js       # Three.js mesh + bloom glow (visual layer)
+│   ├── lossChart.js     # 2D synced loss curve
+│   └── main.js          # UI wiring + smooth animation
 ├── tests/
 │   ├── surfaces.test.js
 │   ├── optimizers.test.js
 │   └── descent.test.js
 └── index.html
 ```
+
+### Numerical stability (a real ML detail)
+
+Steep surfaces like **Rosenbrock** have huge gradients near the start. With one shared learning rate, plain SGD would "explode" to infinity and the ball would vanish. The demo handles this exactly like real deep-learning code:
+
+- **Gradient clipping** — the step size is capped so it never blows up (the *true* gradient is still shown in the stats; only the *step* is clipped).
+- **Per-optimizer learning rates** in race mode — SGD needs a smaller rate than Adam, so each optimizer gets a rate that keeps it stable. These are tuned and locked in `visConfig.js`.
+- **Divergence guard** — if any run still goes non-finite, it stops cleanly instead of drawing `NaN`.
+
+This is why, on Rosenbrock, you'll see **SGD stall in the valley while Momentum and Adam reach the bottom** — that's the real behavior, not a bug.
 
 ---
 

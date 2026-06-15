@@ -1,5 +1,6 @@
 import { SURFACES } from "../src/surfaces.js";
-import { runDescent, runDescentUntilConverged, summarizeDescent } from "../src/descent.js";
+import { runDescent, runDescentUntilConverged, summarizeDescent, clipGradient } from "../src/descent.js";
+import { VIS_CONFIG } from "../src/visConfig.js";
 import { assert, assertClose, runSuite } from "./harness.js";
 
 await runSuite("descent trajectory", {
@@ -51,6 +52,43 @@ await runSuite("descent trajectory", {
     assert(typeof summary.startLoss === "number");
     assert(typeof summary.endLoss === "number");
     assert(summary.lossDecreased);
+  },
+
+  "diverging run produces only finite points and stops early": () => {
+    // lr=0.1 makes SGD explode on Rosenbrock — must not emit NaN/Infinity
+    const traj = runDescent(SURFACES.rosenbrock, "sgd", SURFACES.rosenbrock.defaultStart, 400, { lr: 0.1 });
+    for (const pt of traj) {
+      assert(Number.isFinite(pt.x) && Number.isFinite(pt.y), "x,y finite");
+      assert(Number.isFinite(pt.loss) && Number.isFinite(pt.gradNorm), "loss,grad finite");
+    }
+    assert(traj.length < 401, "should stop before full step count when diverging");
+    assert(traj[traj.length - 1].diverged === true, "last point flagged diverged");
+  },
+
+  "race configs keep all four optimizers finite on every surface": () => {
+    for (const [sid, surface] of Object.entries(SURFACES)) {
+      const cfg = VIS_CONFIG[sid];
+      assert(cfg, `vis config exists for ${sid}`);
+      for (const id of ["sgd", "momentum", "rmsprop", "adam"]) {
+        const traj = runDescent(surface, id, surface.defaultStart, cfg.steps, {
+          lr: cfg.raceLr[id],
+          clipNorm: cfg.clipNorm,
+        });
+        const last = traj[traj.length - 1];
+        assert(Number.isFinite(last.x) && Number.isFinite(last.y), `${sid}/${id} x,y finite`);
+        assert(Number.isFinite(last.loss), `${sid}/${id} loss finite`);
+        assert(last.diverged !== true, `${sid}/${id} should not diverge with race config`);
+      }
+    }
+  },
+
+  "clipGradient caps the norm but keeps direction": () => {
+    const clipped = clipGradient([30, 40], 5); // norm 50 -> 5
+    assertClose(Math.hypot(clipped[0], clipped[1]), 5, 1e-9);
+    assertClose(clipped[0] / clipped[1], 30 / 40, 1e-9);
+    // below cap: unchanged
+    const small = clipGradient([1, 1], 5);
+    assertClose(small[0], 1, 1e-9);
   },
 
   "wavy bowl: SGD from default start reaches origin": () => {

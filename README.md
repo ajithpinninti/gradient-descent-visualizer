@@ -21,7 +21,7 @@ This project lets you **see** all of that in 3D.
 
 ## Demo
 
-> **Status:** Math modules verified ✓ · 3D visualization coming next.
+> **Status:** All math verified ✓ (33 tests) · 3D visualization next — open `index.html` once added.
 
 <!-- Replace with GIF once visual layer is ready -->
 <!-- ![Gradient descent on a bowl surface](assets/demo-bowl.gif) -->
@@ -38,9 +38,9 @@ This repo is built in **small, verified chunks**:
 |-------|------|--------|
 | 0 | Repo scaffold + test harness | ✅ |
 | 1 | Loss surfaces + analytic gradients (math) | ✅ |
-| 2 | Optimizers: SGD, Momentum, RMSProp, Adam | 🔄 |
-| 3 | Trajectory generator (path downhill) | ⏳ |
-| 4 | Three.js 3D surface + animated marker | ⏳ |
+| 2 | Optimizers: SGD, Momentum, RMSProp, Adam | ✅ |
+| 3 | Trajectory generator (path downhill) | ✅ |
+| 4 | Three.js 3D surface + animated marker | 🔄 |
 | 5 | Controls, loss chart, README GIFs | ⏳ |
 
 Every math module has **automated tests** before any pixels are drawn.

@@ -23,14 +23,17 @@ This project lets you **see** all of that in 3D — drag to orbit, scroll to zoo
 
 ## Demo
 
-> **Status:** All math verified ✓ (33 tests) · 3D demo ready — see [Run locally](#run-locally).
+> **Status:** All math verified ✓ (39 tests) · [Live demo](https://ajithpinninti.github.io/gradient-descent-visualizer/) · [Source](https://github.com/ajithpinninti/gradient-descent-visualizer)
 
-<!-- Add GIF here after recording from the demo -->
-<!-- ![Optimizer race on Rosenbrock surface](assets/demo-race.gif) -->
+<video src="assets/demo.webm" autoplay loop muted playsinline controls width="100%">
+  <a href="assets/demo.webm">Watch the demo video</a>
+</video>
 
 **Default view:** a ball starts on a smooth bowl and rolls to the bottom using gradient descent. Switch surfaces to see saddles, multiple minima, and narrow valleys.
 
 **Optimizer race:** enable "Optimizer race" to watch SGD, Momentum, RMSProp, and Adam descend the same surface simultaneously — great for seeing why Adam is the default in deep learning.
+
+**Try it yourself:** https://ajithpinninti.github.io/gradient-descent-visualizer/
 
 ---
 

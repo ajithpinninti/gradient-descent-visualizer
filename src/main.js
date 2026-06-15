@@ -42,6 +42,7 @@ class App {
     this.showRace = document.getElementById("show-race");
     this.surfaceDesc = document.getElementById("surface-desc");
     this.caption = document.getElementById("caption");
+    this.legend = document.getElementById("legend");
 
     this.statStep = document.getElementById("stat-step");
     this.statLoss = document.getElementById("stat-loss");
@@ -131,6 +132,7 @@ class App {
 
     this.scene.setSurface(surface);
     this.scene.setupMarkers(this.optIds, this.showTrail.checked);
+    this._updateLegend();
 
     this.trajectories = this.optIds.map((id) => {
       const lr = race ? cfg.raceLr[id] ?? cfg.defaultLr : Number(this.lrSlider.value);
@@ -206,6 +208,27 @@ class App {
     }
     this._updateStats();
     this._updateChart();
+  }
+
+  _updateLegend() {
+    this.legend.innerHTML = "";
+    for (const id of this.optIds) {
+      const item = document.createElement("div");
+      item.className = "legend-item";
+
+      const dot = document.createElement("span");
+      dot.className = "legend-dot";
+      const color = hexColor(BALL_COLORS[id] ?? 0xffffff);
+      dot.style.background = color;
+      dot.style.color = color;
+
+      const label = document.createElement("span");
+      label.textContent = OPTIMIZERS[id]?.name ?? id;
+
+      item.appendChild(dot);
+      item.appendChild(label);
+      this.legend.appendChild(item);
+    }
   }
 
   _updateStats() {
